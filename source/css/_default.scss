@@ -1,0 +1,75 @@
+/* ==========================================================================
+   default
+   ========================================================================== */
+
+@mixin pie-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin inline-block {
+  display: inline-block;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+body {
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #222;
+}
+
+strong,
+.strong {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+h1,h2,h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.fLeft {
+  float: left;
+}
+.fRight {
+  float: right;
+}
+
+.lyIn {
+  width: 960px;
+  margin: 0 auto;
+  @include pie-clearfix();
+}
+
+.mb20 {
+  margin-bottom: 20px !important;
+}
+
+.mb30 {
+  margin-bottom: 30px !important;
+}
+
+.taR {
+  text-align: right !important;
+}
+
+.txtLink {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
+}

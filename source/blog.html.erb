@@ -1,0 +1,31 @@
+---
+pageable: true
+per_page: 10
+title: ブログ記事一覧 |
+---
+<% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<section class="contentSection">
+  <h2 class="headingLv1"><span class="iconHeading"></span><span class="txt">ブログ記事一覧</span></h2>
+  <div class="inner">
+    <ul class="inner txtList">
+      <% page_articles.each_with_index do |article, i| %>
+        <li><%= link_to article.title, article %> <span><%= article.date.strftime('%Y年%m月%d日') %></span></li>
+    <!-- use article.summary(250) if you have Nokogiri available to show just
+         the first 250 characters -->
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>

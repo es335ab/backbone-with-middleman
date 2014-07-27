@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title><%= current_page.data.title %></title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width">
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="<%= current_page.data.title %>" />
+
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <header class="lyHeader">
+    <div class="lyIn">
+      <p class="uiTxt">共通ヘッダー</p>
+    </div>
+  </header>
+
+  <div class="lyIn">
+    <div class="lyContent">
+      <%= yield %>
+    </div>
+  </div>
+
+  <footer class="lyfooter">
+    <div class="lyIn">
+    </div>
+  </footer>
+
+
+<!--
+  <aside>
+    <h2>Recent Articles</h2>
+    <ol>
+      <% blog.articles[0...10].each do |article| %>
+        <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+      <% end %>
+    </ol>
+
+    <h2>Tags</h2>
+    <ol>
+      <% blog.tags.each do |tag, articles| %>
+        <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+      <% end %>
+    </ol>
+
+    <h2>By Year</h2>
+    <ol>
+      <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+        <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+      <% end %>
+    </ol>
+  </aside>
+-->
+
+  <script src="/js/jquery-2.1.1.min.js"></script>
+  <script src="/js/underscore-min.js"></script>
+  <script src="/js/backbone-min.js"></script>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
