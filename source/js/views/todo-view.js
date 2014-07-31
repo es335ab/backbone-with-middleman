@@ -24,7 +24,7 @@ var app = app || {};
     },
 
     render: function(){
-      if(this.model.changed.id !== undifined){
+      if(this.model.changed.id !== undefined){
         return;
       }
 
@@ -42,7 +42,7 @@ var app = app || {};
     isHidden: function(){
       var isCompleted = this.model.get('completed');
       return (
-        (!isCompleted && app.TodoFilter === 'completed' ||
+        (!isCompleted && app.TodoFilter === 'completed') ||
         (isCompleted && app.TodoFilter === 'active')
       );
 
